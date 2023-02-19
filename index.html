@@ -42,6 +42,22 @@
             </div>
         </div>
 
-        <script></script>
+        <script>
+            var elementos = document.querySelectorAll('.player-options div > img');
+
+            function resetOpacityPlayer(){
+                for(var i = 0; i < elementos.length; i++ ){
+                    elementos[i].style.opacity = 0.3;
+                }
+            }
+
+            for(var i = 0; i < elementos.length; i++ ){
+                elementos[i].addEventListener('click', function(t){
+                    resetOpacityPlayer();
+                    t.target.style.opacity = 1;
+                });
+            }
+
+        </script>
     </body>
 </html>
