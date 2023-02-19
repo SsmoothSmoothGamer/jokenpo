@@ -1,0 +1,1 @@
+- [ ] Trasformar as imagens em SVG
