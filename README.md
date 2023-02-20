@@ -1,1 +1,3 @@
 - [ ] Trasformar as imagens em SVG
+- [ ] Separar JS do index
+- [ ] Separar o CSS
