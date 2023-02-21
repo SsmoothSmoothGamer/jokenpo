@@ -26,6 +26,7 @@
         </style>
 
         <h1 style="text-align: center;">Pedra, papel ou tesoura </h1>
+        <h2 style="text-align: center;" class="vencedor"></h2>
         <hr>
 
         <div class="align">
@@ -46,6 +47,57 @@
             var elementos = document.querySelectorAll('.player-options div > img');
             var playerOpt = "";
             var inimigoOpt = ""; 
+
+            function validarVitoria(){
+
+                let vencedor = document.querySelector('.vencedor')
+                
+                if(playerOpt == "papel"){
+                    if(inimigoOpt == "papel"){
+                        // Empate
+                        vencedor.innerHTML = "O jogo foi empatado";
+                    }else if(inimigoOpt == "tesoura"){
+                        // Perdeu
+                        vencedor.innerHTML = "O inimigo ganhou"
+                    }else if(inimigoOpt == "pedra"){
+                        //Ganheou
+                        vencedor.innerHTML = "O player ganhou"
+                    }
+
+
+                }
+
+                if(playerOpt == "tesoura"){
+                    if(inimigoOpt == "tesoura"){
+                        // Empate
+                        vencedor.innerHTML = "O jogo foi empatado";
+                    }else if(inimigoOpt == "pedra"){
+                        // Perdeu
+                        vencedor.innerHTML = "O inimigo ganhou"
+                    }else if(inimigoOpt == "papel"){
+                        //Ganheou
+                        vencedor.innerHTML = "O player ganhou"
+                    }
+
+
+                }
+
+                if(playerOpt == "pedra"){
+                    if(inimigoOpt == "pedra"){
+                        // Empate
+                        vencedor.innerHTML = "O jogo foi empatado";
+                    }else if(inimigoOpt == "papel"){
+                        // Perdeu
+                        vencedor.innerHTML = "O inimigo ganhou"
+                    }else if(inimigoOpt == "tesoura"){
+                        //Ganheou
+                        vencedor.innerHTML = "O player ganhou"
+                    }
+
+
+                }
+
+            }
 
             function resetInimigo(){
                 const enemyOptions = document.querySelectorAll('.enemy-options div > img')
@@ -69,6 +121,8 @@
                         inimigoOpt = enemyOptions[i].getAttribute('opt')
                     }
                 }
+
+                validarVitoria();
 
             }
 
